@@ -1,0 +1,57 @@
+/*
+ * Your Stylesheet
+ * ATOM Background Stylesheet
+ *
+ * This stylesheet is loaded when Atom starts up and is reloaded automatically
+ * when it is changed and saved.
+ *
+ * Add your own CSS or Less to fully customize Atom.
+ * If you are unfamiliar with Less, you can read more about it here:
+ * http://lesscss.org
+ */
+
+/*
+ * Examples
+ * (To see them, uncomment and save)
+ */
+
+// style the background color of the tree view
+.tree-view {
+  background: rgba(35, 66, 30, 0.6);
+  // background:url('/Users/mac/.atom/bg/34.jpg') no-repeat center center;
+
+  // background-color: whitesmoke;
+}
+
+// style the background and foreground colors on the atom-text-editor-element itself
+atom-text-editor {
+  // color: red;
+  // background-color: hsl(180, 24%, 12%);
+}
+
+// style UI elements inside atom-text-editor
+atom-text-editor .cursor {
+  border-color: red;
+}
+// @var: round(`Math.random()*30`);
+@var:49;
+// @bbb:round(@aaa)
+@randomNumber: '/Users/mac/.atom/bg/@{var}.jpg';
+.scroll-view::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  background:url(@randomNumber) no-repeat center right;
+  // background: @randomNumber;
+  background-size:100% ;
+  // background-size:contain;
+  z-index: -1;
+}
+
+.editor {
+  background: rgba(203,237, 204, 0.8);
+}
