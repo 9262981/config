@@ -33,11 +33,17 @@ atom-text-editor {
 atom-text-editor .cursor {
   border-color: red;
 }
+
+// mac配置 (设置了随机变量,但是貌似不太管用,可能是round()中包含的js代码嵌套包围有问题.等待测试,不影响使用)
 // @var: round(`Math.random()*30`);
-@var:49;
+// @var:49;
 // @bbb:round(@aaa)
-@randomNumber: '/Users/mac/.atom/bg/@{var}.jpg';
-.scroll-view::before{
+// @randomNumber: '/Users/mac/.atom/bg/@{var}.jpg';
+
+// window配置
+@randomNumber: 'D:/picture/Sample Pictures/明星/江疏影/45a6743675c8bd23.jpg';
+
+.scroll-view::after{
   content: "";
   position: absolute;
   top: 0;
@@ -45,7 +51,7 @@ atom-text-editor .cursor {
   width: 100%;
   height: 100%;
   opacity: 1;
-  background:url(@randomNumber) no-repeat center right;
+  background:url(@randomNumber) no-repeat bottom center;
   // background: @randomNumber;
   background-size:100% ;
   // background-size:contain;
@@ -53,5 +59,6 @@ atom-text-editor .cursor {
 }
 
 .editor {
-  background: rgba(203,237, 204, 0.8);
+  background: rgba(10,10, 10, .7);
+  // background: rgba(203,237, 204, .8);
 }
